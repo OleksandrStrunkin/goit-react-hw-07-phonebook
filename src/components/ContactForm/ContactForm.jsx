@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styled from './ContactForm.module.css';
-import { addContact } from 'redux/contacts/contacts-slice';
+import { fetchAddContacts } from 'redux/contacts/contacts-operation';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilteredContacts } from 'redux/contacts/contacts-selectors';
+import { getFilteredContacts,} from 'redux/contacts/contacts-selectors';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
@@ -31,7 +31,7 @@ export default function ContactForm() {
       return;
     }
 
-    dispatch(addContact({ name, number }));
+    dispatch(fetchAddContacts({ name, number }));
 
     setName('');
     setNumber('');
