@@ -1,11 +1,10 @@
 import styled from './ContactList.module.css'
-import { nanoid } from "nanoid";
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
-// import { deleteContact } from 'redux/contacts/contacts-slice';
-import { getFilteredContacts, getAllContacts } from 'redux/contacts/contacts-selectors';
-import { fetchContacts, fetchAddContacts, fetchDeleteContacts } from 'redux/contacts/contacts-operation';
+
+import { getFilteredContacts} from 'redux/contacts/contacts-selectors';
+import { fetchContacts, fetchDeleteContacts } from 'redux/contacts/contacts-operation';
 
 const ContactList = () => {
     const dispatch = useDispatch();
